@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/theme.css}" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      th:href="@{/images/favicon.ico}"
+      sizes="any"
+    />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <script defer type="text/javascript" th:src="@{/js/crud.js}"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <title>TravelRest</title>
+  </head>
+  <body>
+    <section class="container">
+      <h1 class="txt-center">Panel de Vuelos</h1>
+    </section>
+    <section>
+      <div class="txt-center">Filtros</div>
+      <div class="container center">
+        <button
+          id="btnOrigin"
+          class="btn outline br-yellow txt-yellow"
+          style="margin: 5px"
+        >
+          Origen
+        </button>
+        <button
+          id="btnDestination"
+          class="btn outline br-yellow txt-yellow"
+          style="margin: 5px"
+        >
+          Destino
+        </button>
+        <button
+          id="btnLayover"
+          class="btn outline br-yellow txt-yellow"
+          style="margin: 5px"
+        >
+          Escalas
+        </button>
+      </div>
+      <div id="filterContainer" class="container center none">
+        <div class="Fiinput">
+          <input id="filterInput" type="text" required="" autocomplete="off" />
+          <label for="filter" id="filterLabel">Filtro</label>
+        </div>
+        <div class="middle">
+          <button
+            class="btn outline"
+            id="filterAction"
+            style="margin-left: 10px"
+          >
+            Buscar
+          </button>
+        </div>
+        <div class="middle none" id="btnDelCont">
+          <button id="btnDeleteFilter" class="btn outline br-red txt-red" style="margin-left: 5px">Borrar</button>
+        </div>
+        <div class="middle">
+          <button id="btnReset" class="btn outline br-second txt-second" style="margin-left: 5px">Limpiar</button>
+        </div>
+      </div>
+    </section>
+    <section class="container">
+      <div>
+        <div class="center card span-2" style="flex-direction: column">
+          <div class="grid col-2">
+            <h3>Tabla de vuelos</h3>
+            <div class="right">
+              <button class="btn green" id="btnAdd">
+                <i class="bx bxs-user-plus"></i> Agregar
+              </button>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Origen</th>
+                <th>Destino</th>
+                <th>Escala</th>
+                <th>Precio</th>
+                <th>Areolina</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="stTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section class="container none" id="formContainer">
+      <div class="card span-1 md-span-2" id="cardForm">
+        <h2 class="center"><span id="actionTitle">.</span></h2>
+        <form id="stForm">
+          <input
+            id="origin"
+            class="input outline"
+            type="text"
+            placeholder="Origen"
+          />
+          <input
+            id="destination"
+            class="input outline"
+            type="text"
+            placeholder="Destino"
+          />
+          <input
+            id="layover"
+            class="input outline"
+            type="number"
+            placeholder="Num. Escalas"
+          />
+          <input
+            id="price"
+            class="input outline"
+            type="number"
+            placeholder="Precio"
+          />
+          <input
+            id="airline"
+            class="input outline"
+            type="text"
+            placeholder="Areolina"
+          />
+          <div class="center">
+            <button class="btn second" id="btnSend" style="margin-right: 10px">
+              Guardar
+            </button>
+            <button class="btn yellow" id="btnClear">Limpiar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div id="ohsnap"></div>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+  </body>
+</html>

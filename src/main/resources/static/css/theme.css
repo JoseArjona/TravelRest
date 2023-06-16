@@ -1,0 +1,62 @@
+:root {
+    --cont-wh: 1200px;
+    --primary: #137590 !important;
+    --secondary: #d6efd1 !important;
+    --background: #070f2c !important;
+    --font-color: #f6f8fe !important;
+    --green: #62c242;
+    --red: #dc3243;
+    --yellow: #f2c94c;
+    --blue: #2f80ed;
+    --purple: #2a184a;
+    --radius: 5px;
+  }
+
+  .btn:hover {
+     opacity : 0.8;
+     box-shadow: 0 0 10px rgba(35, 66, 48, 0.5);
+  }
+
+  .none{
+      display: none!important;
+  }
+
+  .Fiinput {
+    margin: 1em 0 1em 0;
+    max-width: 190px;
+    position: relative;
+  }
+  
+  .Fiinput input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid var(--primary);
+    color: var(--font-color);
+    background-color: transparent;
+    border-radius: 20px;
+    width: 100%;
+  }
+  
+  .Fiinput label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: rgb(255, 255, 255);
+  }
+  
+  .Fiinput :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: var(--background);
+  }
+  
+  .inputGroup :is(input:focus, input:valid) {
+    border-color: rgb(37, 37, 211);
+  }
